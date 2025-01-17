@@ -1,0 +1,29 @@
+Question 5
+import java.util.Scanner;  
+
+public class TwoDArrayInputOutput {  
+    public static void main(String[] args) {  
+        // Declare a 2D array of size 10 by 10  
+        String[][] userInputs = new String[10][10];  
+        Scanner scanner = new Scanner(System.in);  
+
+        // Part a: Accept input from the user  
+        for (int i = 0; i < userInputs.length; i++) {  
+            for (int j = 0; j < userInputs[i].length; j++) {  
+                System.out.print("Enter input for index [" + i + "][" + j + "]: ");  
+                userInputs[i][j] = scanner.nextLine(); // Store user input in the array  
+            }  
+        }  
+
+        // Part b: Print out the input entered by the user using a for-each loop  
+        System.out.println("\nYou entered:");  
+        for (String[] row : userInputs) {  
+            for (String input : row) {  
+                System.out.print(input + " ");  
+            }  
+            System.out.println(); // Move to the next line after each row  
+        }  
+
+        scanner.close();  
+    }  
+}
