@@ -1,0 +1,42 @@
+Question 2
+using a single loop
+importjava.util.scanner
+public class NigeriaFlagSingleLoop {  
+    public static void main(String[] args) {  
+        int height = 9; // Total height of the flag  
+
+        for (int i = 0; i < height; i++) {  
+            if (i < 3 || i >= 6) { // For green sections  
+                System.out.println("****  ======");  
+            } else { // For white section  
+                System.out.println("====  ======");  
+            }  
+        }  
+    }  
+}
+
+Using a nested loop
+public class NigeriaFlagNestedLoop {  
+    public static void main(String[] args) {  
+        int height = 9; // Total height of the flag  
+
+        for (int i = 0; i < height; i++) {  
+            for (int j = 0; j < 4; j++) {  
+                if (i < 3 || i >= 6) { // For green sections  
+                    System.out.print("*");  
+                } else { // For white section  
+                    System.out.print("=");  
+                }  
+            }  
+            System.out.print("  "); // Space between sections  
+            for (int j = 0; j < 7; j++) { // Right side of the flag  
+                if (i < 3 || i >= 6) {  
+                    System.out.print("=");  
+                } else {  
+                    System.out.print("=");  
+                }  
+            }  
+            System.out.println();  
+        }  
+    }  
+}
