@@ -1,0 +1,49 @@
+Question 3
+import java.util.Arrays;  
+
+public class ArrayStatistics {  
+    public static void main(String[] args) {  
+        int[] data = {2, 5, 9, 4, 7, 0, 9, 6, 11, 12};  
+
+        // Mean Calculation  
+        double mean = calculateMean(data);  
+        System.out.println("Mean: " + mean);  
+
+        // Median Calculation  
+        double median = calculateMedian(data);  
+        System.out.println("Median: " + median);  
+
+        // Standard Deviation Calculation  
+        double standardDeviation = calculateStandardDeviation(data, mean);  
+        System.out.println("Standard Deviation: " + standardDeviation);  
+    }  
+
+    // Method to calculate mean  
+    static double calculateMean(int[] data) {  
+        double sum = 0;  
+        for (int num : data) {  
+            sum += num;  
+        }  
+        return sum / data.length;  
+    }  
+
+    // Method to calculate median  
+    static double calculateMedian(int[] data) {  
+        Arrays.sort(data); // Sort the array  
+        int n = data.length;  
+        if (n % 2 == 0) {  
+            return (data[n/2 - 1] + data[n/2]) / 2.0; // Average of the two middle elements  
+        } else {  
+            return data[n/2]; // Middle element  
+        }  
+    }  
+
+    // Method to calculate standard deviation  
+    static double calculateStandardDeviation(int[] data, double mean) {  
+        double sumOfSquares = 0;  
+        for (int num : data) {  
+            sumOfSquares += Math.pow(num - mean, 2);  
+        }  
+        return Math.sqrt(sumOfSquares / data.length);  
+    }  
+}
