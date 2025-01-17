@@ -1,0 +1,24 @@
+Question 4
+import java.util.Scanner;  
+
+public class ArrayInputOutput {  
+    public static void main(String[] args) {  
+        // Declare an array of length 10  
+        String[] userInputs = new String[10];  
+        Scanner scanner = new Scanner(System.in);  
+
+        // Part a: Accept input from the user  
+        for (int i = 0; i < userInputs.length; i++) {  
+            System.out.print("Enter input for index " + i + ": ");  
+            userInputs[i] = scanner.nextLine(); // Store user input in the array  
+        }  
+
+        // Part b: Print out the input entered by the user  
+        System.out.println("\nYou entered:");  
+        for (int i = 0; i < userInputs.length; i++) {  
+            System.out.println("Index " + i + ": " + userInputs[i]);  
+        }  
+
+        scanner.close();  
+    }  
+}
